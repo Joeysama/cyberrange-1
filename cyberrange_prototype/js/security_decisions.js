@@ -20,6 +20,7 @@ function formatCurrency(funds) {
   if (neg) {formattedfunds = formattedfunds.substring(0,1) + "-" + formattedfunds.substring(1,formattedfunds.length)}
   return formattedfunds;
 }
+//this is a coment
 var names = ["Firewall - Host", "Firewall - Network", "Firewall - Client",
 "Anti-Virus - Host", "Anti-Virus - Network", "Anti-Virus - Client",
 "Network Access Controls", "Spam-Phishing Filters", "Secure Email Gateway",
