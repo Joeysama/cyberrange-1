@@ -105,10 +105,10 @@ nbar.innerHTML=(
 							<a class="nav-link text-white" href="people_security.html">People Decisions</a> \
 						</li> \
             <li class="nav-item"> \
-							<a class="nav-link text-white" href="asset_decisions.html">Assets Decisions</a> \
+							<a class="nav-link text-white" href="asset_decisions.html">Asset Decisions</a> \
 						</li> \
             <li class="nav-item"> \
-              <a class="nav-link text-white" href="risk.html">Risk Landscape</a> \
+              <a class="nav-link text-white" href="risk.html">Scores</a> \
             </li> \
 					</ul> \
 					<form class="form-inline my-2 my-lg-0"> \
