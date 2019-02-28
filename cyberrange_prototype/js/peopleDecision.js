@@ -3,9 +3,9 @@ var peopleTitle1;
 var peopleTitle2;
 var peopleTitle3;
 
-var employeeNumber1;
-var employeeNumber2;
-var employeeNumber3;
+var fte1;
+var fte2;
+var fte3;
 
 var costFte1;
 var costFte2;
@@ -20,19 +20,19 @@ var ServerAdmin = {}
 var DesktopEngineer ={
     level1:{
         title: "Desktop Engineer 1",
-        employeeNumber: "03",
+        fte: "03",
         costFte: "50,000",
         trainingPerEmployee: "2,000"
     },
     level2: {
         title: "Desktop Engineer 2",
-        employeeNumber: "01",
+        fte: "01",
         costFte: "70,000",
         trainingPerEmployee: "2,000"
     },
     level3: {
         title: "Desktop Engineer 3",
-        employeeNumber: "02",
+        fte: "02",
         costFte: "80,000",
         trainingPerEmployee: "2,000"
     }
@@ -41,19 +41,19 @@ var DesktopEngineer ={
 var DBA ={
     level1:{
         title: "DBA 1",
-        employeeNumber: "02",
+        fte: "02",
         costFte: "80,000",
         trainingPerEmployee: "2,000"
     },
     level2: {
         title: "DBA 2",
-        employeeNumber: "02",
+        fte: "02",
         costFte: "90,000",
         trainingPerEmployee: "2,000"
     },
     level3: {
         title: "DBA 3",
-        employeeNumber: "01",
+        fte: "01",
         costFte: "95,000",
         trainingPerEmployee: "2,000"
     }
@@ -62,19 +62,19 @@ var DBA ={
 var AppIntegration ={
     level1:{
         title: "App Integration 1",
-        employeeNumber: "02",
+        fte: "02",
         costFte: "80,000",
         trainingPerEmployee: "2,000"
     },
     level2: {
         title: "App Integration 2",
-        employeeNumber: "02",
+        fte: "02",
         costFte: "90,000",
         trainingPerEmployee: "2,000"
     },
     level3: {
         title: "App Integration 3",
-        employeeNumber: "01",
+        fte: "01",
         costFte: "95,000",
         trainingPerEmployee: "2,000"
     }
@@ -83,19 +83,19 @@ var AppIntegration ={
 var AppDeveloper ={
     level1:{
         title: "App Developer 1",
-        employeeNumber: "04",
+        fte: "04",
         costFte: "60,000",
         trainingPerEmployee: "2,000"
     },
     level2: {
         title: "App Developer 2",
-        employeeNumber: "03",
+        fte: "03",
         costFte: "70,000",
         trainingPerEmployee: "2,000"
     },
     level3: {
         title: "App Developer 3",
-        employeeNumber: "01",
+        fte: "01",
         costFte: "85,000",
         trainingPerEmployee: "2,000"
     }
@@ -104,19 +104,19 @@ var AppDeveloper ={
 var ServiceDesk ={
     level1:{
         title: "Service Desk 1",
-        employeeNumber: "05",
+        fte: "05",
         costFte: "40,000",
         trainingPerEmployee: "2,000"
     },
     level2: {
         title: "Service Desk 2",
-        employeeNumber: "04",
+        fte: "04",
         costFte: "50,000",
         trainingPerEmployee: "2,000"
     },
     level3: {
         title: "Service Desk 3",
-        employeeNumber: "03",
+        fte: "03",
         costFte: "60,000",
         trainingPerEmployee: "2,000"
     }
@@ -125,19 +125,19 @@ var ServiceDesk ={
 var DesktopSupport ={
     level1:{
         title: "Desktop Support 1",
-        employeeNumber: "03",
+        fte: "03",
         costFte: "40,000",
         trainingPerEmployee: "2,000"
     },
     level2: {
         title: "Desktop Support 2",
-        employeeNumber: "03",
+        fte: "03",
         costFte: "50,000",
         trainingPerEmployee: "2,000"
     },
     level3: {
         title: "Desktop Support 3",
-        employeeNumber: "02",
+        fte: "02",
         costFte: "60,000",
         trainingPerEmployee: "2,000"
     }
@@ -166,9 +166,9 @@ addLoadEvent( function() {
     peopleTitle2 = document.getElementById("peopleTitle2");
     peopleTitle3 = document.getElementById("peopleTitle3");
 
-    employeeNumber1 = document.getElementById("employeeNumber1");
-    employeeNumber2 = document.getElementById("employeeNumber2");
-    employeeNumber3 = document.getElementById("employeeNumber3");
+    fte1 = document.getElementById("employeeNumber1");
+    fte2 = document.getElementById("employeeNumber2");
+    fte3 = document.getElementById("employeeNumber3");
 
     costFte1 = document.getElementById("costPerEmployee1");
     costFte2 = document.getElementById("costPerEmployee2");
@@ -193,9 +193,11 @@ addLoadEvent( function() {
           var level = "level"+num;
           security[level] = {
             title:"Security " + num,
-            employeeNumber: data[i].fte,
+            fte: data[i].fte,
             costFte: data[i].costFte,
-            trainingPerEmployee: data[i].trainingFte,
+            trainingFte: data[i].trainingFte,
+            trainingCost: data[i].trainingCost,
+            changedTrainingFte: data[i].changedTrainingFte,
             addFte: data[i].addFte,
             removeFte: data[i].removeFte,
             peopleID: data[i].peopleID,
@@ -209,9 +211,11 @@ addLoadEvent( function() {
           var level = "level"+num;
           netEngineer[level] = {
             title:"Network Engineer " + num,
-            employeeNumber: data[i].fte,
+            fte: data[i].fte,
             costFte: data[i].costFte,
-            trainingPerEmployee: data[i].trainingFte,
+            trainingFte: data[i].trainingFte,
+            trainingCost: data[i].trainingCost,
+            changedTrainingFte: data[i].changedTrainingFte,
             addFte: data[i].addFte,
             removeFte: data[i].removeFte,
             peopleID: data[i].peopleID,
@@ -225,9 +229,11 @@ addLoadEvent( function() {
           var level = "level"+num;
           ServerAdmin[level] = {
             title:"Server Admin " + num,
-            employeeNumber: data[i].fte,
+            fte: data[i].fte,
             costFte: data[i].costFte,
-            trainingPerEmployee: data[i].trainingFte,
+            trainingFte: data[i].trainingFte,
+            trainingCost: data[i].trainingCost,
+            changedTrainingFte: data[i].changedTrainingFte,
             addFte: data[i].addFte,
             removeFte: data[i].removeFte,
             peopleID: data[i].peopleID,
@@ -248,7 +254,7 @@ window.onbeforeunload= function() {
   var xhr1 = new XMLHttpRequest()
   var arr = []
   for(var i = 0; i < 3; i++) {
-    for(var j = 0; j < 3; j++) {
+    for(var j = 1; j < 4; j++) {
       arr.push(peopleType[i]["level"+j]);
     }
   }
@@ -281,7 +287,7 @@ function increase(lvl) {
   SecurityShow(current_i);
 }
 function decrease(lvl) {
-  if(parseInt(current["level"+(lvl)]["employeeNumber"]) == 0) { return false; }
+  if(parseInt(current["level"+(lvl)]["fte"]) == 0) { return false; }
   if(current["level"+(lvl)]["addFte"] == 0){
     current["level"+(lvl)]["removeFte"] = parseInt(current["level"+(lvl)]["removeFte"])+1;
   }
@@ -290,7 +296,15 @@ function decrease(lvl) {
   }
   SecurityShow(current_i);
 }
-
+function changeTraining(lvl) {
+  console.log("method called")
+  let newTrain = parseInt(document.getElementById("num"+lvl).value);
+  current["level"+(lvl)]["trainingFte"] = newTrain;
+  current["level"+(lvl)]["trainingCost"] = newTrain*parseInt(current["level"+(lvl)]["fte"]);
+  trainingPerEmployee1.innerHTML= current.level1.trainingCost;
+  trainingPerEmployee2.innerHTML= current.level2.trainingCost;
+  trainingPerEmployee3.innerHTML= current.level3.trainingCost;
+}
 function SecurityShow(i){
         current = peopleType[i];
         current_i = i;
@@ -298,15 +312,20 @@ function SecurityShow(i){
         peopleTitle2.innerHTML= peopleType[i].level2.title;
         peopleTitle3.innerHTML= peopleType[i].level3.title;
 
-        employeeNumber1.innerHTML= parseInt(peopleType[i].level1.employeeNumber)+parseInt(peopleType[i].level1.addFte)-parseInt(peopleType[i].level1.removeFte);
-        employeeNumber2.innerHTML= parseInt(peopleType[i].level2.employeeNumber)+parseInt(peopleType[i].level2.addFte)-parseInt(peopleType[i].level2.removeFte);
-        employeeNumber3.innerHTML= parseInt(peopleType[i].level3.employeeNumber)+parseInt(peopleType[i].level3.addFte)-parseInt(peopleType[i].level3.removeFte);
+        fte1.innerHTML= parseInt(peopleType[i].level1.fte)+parseInt(peopleType[i].level1.addFte)-parseInt(peopleType[i].level1.removeFte);
+        fte2.innerHTML= parseInt(peopleType[i].level2.fte)+parseInt(peopleType[i].level2.addFte)-parseInt(peopleType[i].level2.removeFte);
+        fte3.innerHTML= parseInt(peopleType[i].level3.fte)+parseInt(peopleType[i].level3.addFte)-parseInt(peopleType[i].level3.removeFte);
 
         costFte1.innerHTML= peopleType[i].level1.costFte;
         costFte2.innerHTML= peopleType[i].level2.costFte;
         costFte3.innerHTML= peopleType[i].level3.costFte;
 
-        trainingPerEmployee1.innerHTML= peopleType[i].level1.trainingPerEmployee;
-        trainingPerEmployee2.innerHTML= peopleType[i].level2.trainingPerEmployee;
-        trainingPerEmployee3.innerHTML= peopleType[i].level3.trainingPerEmployee;
+        trainingPerEmployee1.innerHTML= peopleType[i].level1.trainingCost;
+        trainingPerEmployee2.innerHTML= peopleType[i].level2.trainingCost;
+        trainingPerEmployee3.innerHTML= peopleType[i].level3.trainingCost;
+
+        document.getElementById("num1").value = peopleType[i].level1.trainingFte;
+        document.getElementById("num2").value = peopleType[i].level2.trainingFte;
+        document.getElementById("num3").value = peopleType[i].level2.trainingFte;
+
 }

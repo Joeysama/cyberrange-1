@@ -15,7 +15,7 @@ window.onload = function(){
             }
             console.log(data);
             show();
-        } 
+        }
     }
 xhr.send(JSON.stringify({userID:1,gameID:1,roundNumber:round}));
 
@@ -27,13 +27,14 @@ xhr.send(JSON.stringify({userID:1,gameID:1,roundNumber:round}));
             document.getElementById("processName" + j).innerHTML = data[i].processName;
             document.getElementById("declev"+ j).innerHTML = decisionlev[i];
             document.getElementById("profac" + j).innerHTML = Math.round(data[i].weight * Math.log(decisionlev[i] + 1)*100)/100;
+            document.getElementById("decisions" + j).value = decisionlev[i];
         }
     }
 
     function sample_callback(sample_response){
         alert(sample_response);
     }
-    
+
     function sample_load(sample_url, sample_data, sample_callback){
     var sample_xhr = new XMLHttpRequest();
     sample_xhr.onreadystatechange = function() {

@@ -15,7 +15,7 @@ xhr.onreadystatechange = function () {
         }
         show();
       }
-    } 
+    }
 xhr.send(JSON.stringify({userID:1,gameID:1,roundNumber:round}));
 
 function show() {
@@ -26,6 +26,7 @@ function show() {
         document.getElementById("policyName" + j).innerHTML = data[i].policyName;
         document.getElementById("declev"+ j).innerHTML = decisionlev[i];
         document.getElementById("netdeclev" + j).innerHTML = Math.round(data[i].weight * (decisionlev[i] - Math.log(data[i].impactWeight * data[i].constraints + 1))*10)/10;
+        document.getElementById("decisions" + j).value = decisionlev[i];
     }
 }
 
@@ -65,7 +66,7 @@ document.getElementById("submit1").onclick = function()
 
 document.getElementById("submit2").onclick = function()
 {
-  decisionlev[0] = document.getElementById("decisions2").value;
+  decisionlev[1] = document.getElementById("decisions2").value;
         show();
   console.log('Method called');
   var sample_url = 'http://131.183.222.85:8080/pushPolicyDecisions';
@@ -80,7 +81,7 @@ document.getElementById("submit2").onclick = function()
 
 document.getElementById("submit3").onclick = function()
 {
-  decisionlev[0] = document.getElementById("decisions3").value;
+  decisionlev[2] = document.getElementById("decisions3").value;
         show();
   console.log('Method called');
   var sample_url = 'http://131.183.222.85:8080/pushPolicyDecisions';
@@ -95,7 +96,7 @@ document.getElementById("submit3").onclick = function()
 
 document.getElementById("submit4").onclick = function()
 {
-  decisionlev[0] = document.getElementById("decisions4").value;
+  decisionlev[3] = document.getElementById("decisions4").value;
         show();
   console.log('Method called');
   var sample_url = 'http://131.183.222.85:8080/pushPolicyDecisions';
@@ -110,7 +111,7 @@ document.getElementById("submit4").onclick = function()
 
 document.getElementById("submit5").onclick = function()
 {
-  decisionlev[0] = document.getElementById("decisions5").value;
+  decisionlev[4] = document.getElementById("decisions5").value;
         show();
   console.log('Method called');
   var sample_url = 'http://131.183.222.85:8080/pushPolicyDecisions';
@@ -125,7 +126,7 @@ document.getElementById("submit5").onclick = function()
 
 document.getElementById("submit6").onclick = function()
 {
-  decisionlev[0] = document.getElementById("decisions6").value;
+  decisionlev[5] = document.getElementById("decisions6").value;
         show();
   console.log('Method called');
   var sample_url = 'http://131.183.222.85:8080/pushPolicyDecisions';
@@ -140,7 +141,7 @@ document.getElementById("submit6").onclick = function()
 
 document.getElementById("submit7").onclick = function()
 {
-  decisionlev[0] = document.getElementById("decisions7").value;
+  decisionlev[6] = document.getElementById("decisions7").value;
         show();
   console.log('Method called');
   var sample_url = 'http://131.183.222.85:8080/pushPolicyDecisions';
@@ -155,7 +156,7 @@ document.getElementById("submit7").onclick = function()
 
 document.getElementById("submit8").onclick = function()
 {
-  decisionlev[0] = document.getElementById("decisions8").value;
+  decisionlev[7] = document.getElementById("decisions8").value;
         show();
   console.log('Method called');
   var sample_url = 'http://131.183.222.85:8080/pushPolicyDecisions';
@@ -170,7 +171,7 @@ document.getElementById("submit8").onclick = function()
 
 document.getElementById("submit9").onclick = function()
 {
-  decisionlev[0] = document.getElementById("decisions9").value;
+  decisionlev[8] = document.getElementById("decisions9").value;
         show();
   console.log('Method called');
   var sample_url = 'http://131.183.222.85:8080/pushPolicyDecisions';
@@ -189,7 +190,7 @@ $(document).ready(function() {
       var idx = $e.index();
       var itemsPerSlide = 3;
       var totalItems = $(".carousel-item").length;
-  
+
       if (idx >= totalItems - (itemsPerSlide - 1)) {
         var it = itemsPerSlide - (totalItems - idx);
         for (var i = 0; i < it; i++) {
@@ -211,4 +212,3 @@ $(document).ready(function() {
 }
 */
 }
-
